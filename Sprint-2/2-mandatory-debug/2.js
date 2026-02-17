@@ -2,7 +2,7 @@
 
 // Predict the output of the following code:
 // =============> Write your prediction here
-
+//theoutput will be an error because the function getLastDigit does not take any parameters, but it is being called with arguments (42, 105, 806). The error message will likely indicate that getLastDigit is not defined or that it cannot be called with arguments.
 const num = 103;
 
 function getLastDigit() {
