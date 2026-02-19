@@ -1,7 +1,0 @@
-const height = 5; // 10 is just an example of a value here - your code should still work if you change this to another value.
-const width = 20; // Also just an example - your code should still work if this changes.
-let area= height * width; // Your code here - calculate the area of the rectangle and store it in this variable.
-let perimeter = 2 * (height + width); // Your code here - calculate the perimeter of the rectangle and store it in this variable.
-console.log(area); // Your code to validate output here
-console.log(perimeter); // Your code to validate output here
-
