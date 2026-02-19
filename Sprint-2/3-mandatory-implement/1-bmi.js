@@ -16,4 +16,8 @@
 
 function calculateBMI(weight, height) {
     // return the BMI of someone based off their weight and height
+    const bmi = weight / (height ^2);
+    return Math.round(bmi * 10) / 10;       
 }
+console.log(calculateBMI(70, 1.73)); // should return 23.4
+
