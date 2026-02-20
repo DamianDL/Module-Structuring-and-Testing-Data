@@ -23,6 +23,24 @@
 
 function getCardValue(card) {
   // TODO: Implement this function
+  const rank = card.slice(0, -1); // Get the rank by slicing off the last character (the suit)
+  const suit = card.slice(-1); // Get the suit by taking the last character of the string
+
+  // Validate the suit
+  const validSuits = ["♠", "♥", "♦", "♣"];
+  if (!validSuits.includes(suit)) {
+    throw new Error("Invalid card: Invalid suit");
+  }
+  // Determine the value based on the rank
+  if (rank === "A") {
+    return 11;
+  } else if (["J", "Q", "K"].includes(rank)) {
+    return 10;
+  } else if (!isNaN(rank) && parseInt(rank) >= 2 && parseInt(rank) <= 10) {
+    return parseInt(rank);
+  } else {
+    throw new Error("Invalid card: Invalid rank");
+  }
 }
 
 // The line below allows us to load the getCardValue function into tests in other files.
