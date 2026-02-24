@@ -8,3 +8,27 @@ const isProperFraction = require("../implement/2-is-proper-fraction");
 test(`should return false when denominator is zero`, () => {
   expect(isProperFraction(1, 0)).toEqual(false);
 });
+// Case 1: Proper fractions
+test(`should return true for proper fractions`, () => {
+  expect(isProperFraction(1, 2)).toEqual(true); 
+  expect(isProperFraction(-1, 2)).toEqual(true);
+  expect(isProperFraction(1, -2)).toEqual(true);
+  expect(isProperFraction(-1, -2)).toEqual(true);
+  expect(isProperFraction(0, 2)).toEqual(true);
+});
+
+// Case 2: Improper fractions
+test(`should return false for improper fractions`, () => {
+  expect(isProperFraction(2, 1)).toEqual(false);
+  expect(isProperFraction(-2, 1)).toEqual(false);
+  expect(isProperFraction(2, -1)).toEqual(false);
+  expect(isProperFraction(-2, -1)).toEqual(false);
+  expect(isProperFraction(2, 2)).toEqual(false);
+  expect(isProperFraction(-2, -2)).toEqual(false);    
+});
+// Case 3: Invalid fractions (denominator is zero)
+test(`should return false when denominator is zero`, () => {
+  expect(isProperFraction(1, 0)).toEqual(false);
+  expect(isProperFraction(-1, 0)).toEqual(false);
+  expect(isProperFraction(0, 0)).toEqual(false);
+}); 
