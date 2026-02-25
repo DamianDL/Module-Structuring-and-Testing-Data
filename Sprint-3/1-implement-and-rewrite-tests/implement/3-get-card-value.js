@@ -63,23 +63,23 @@ assertEquals(getCardValue("J♦"), 10);
 assertEquals(getCardValue("Q♣"), 10);
 assertEquals(getCardValue("K♦"), 10);
 assertEquals(getCardValue("10♥"), 10);
-assertEquals(getCardValue("11♠"), "invalid"); // This should throw an error
-assertEquals(getCardValue("A"), "invalid"); // This should throw an error
-assertEquals(getCardValue("2X"), "invalid"); // This should throw an error  
 
+// Test invalid cards - these should throw errors
+function testInvalidCard(card) {
+  try {
+    getCardValue(card);
+    console.error(`Error was not thrown for invalid card: ${card}`);
+  } catch (e) {
+    console.log(`✓ Correctly threw error for: ${card}`);
+  }
+}
 
-
-// Handling invalid cards
-try {
-  getCardValue("invalid");
-
-  // This line will not be reached if an error is thrown as expected
-  console.error("Error was not thrown for invalid card");
-} catch (e) {}
-
-// What other invalid card cases can you think of?
-assertEquals(getCardValue(""), "invalid"); // This should throw an error
-assertEquals(getCardValue("A♠♠"), "invalid"); // This should throw an error
-assertEquals(getCardValue("1♠"), "invalid"); // This should throw an error
-assertEquals(getCardValue("B♠"), "invalid"); // This should throw an error
-assertEquals(getCardValue("A♠A"), "invalid"); // This should throw an error
+testInvalidCard("11♠"); // Invalid rank
+testInvalidCard("A"); // Missing suit
+testInvalidCard("2X"); // Invalid suit
+testInvalidCard("invalid"); // Completely invalid
+testInvalidCard(""); // Empty string
+testInvalidCard("A♠♠"); // Extra character
+testInvalidCard("1♠"); // Invalid rank (1 instead of A)
+testInvalidCard("B♠"); // Invalid rank
+testInvalidCard("A♠A"); // Invalid format

@@ -23,8 +23,7 @@ test(`Should throw an error when given an invalid card`, () => {
   expect(() => getCardValue("11♠")).toThrow("Invalid card: Invalid rank");
   expect(() => getCardValue("A")).toThrow("Invalid card: Invalid suit");
   expect(() => getCardValue("2X")).toThrow("Invalid card: Invalid suit");
-}
+});
 // To learn how to test whether a function throws an error as expected in Jest,
 // please refer to the Jest documentation:
 // https://jestjs.io/docs/expect#tothrowerror
-
