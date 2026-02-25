@@ -58,6 +58,16 @@ function assertEquals(actualOutput, targetOutput) {
 // TODO: Write tests to cover all outcomes, including throwing errors for invalid cards.
 // Examples:
 assertEquals(getCardValue("9♠"), 9);
+assertEquals(getCardValue("A♥"), 11);
+assertEquals(getCardValue("J♦"), 10);
+assertEquals(getCardValue("Q♣"), 10);
+assertEquals(getCardValue("K♦"), 10);
+assertEquals(getCardValue("10♥"), 10);
+assertEquals(getCardValue("11♠"), "invalid"); // This should throw an error
+assertEquals(getCardValue("A"), "invalid"); // This should throw an error
+assertEquals(getCardValue("2X"), "invalid"); // This should throw an error  
+
+
 
 // Handling invalid cards
 try {
@@ -68,3 +78,8 @@ try {
 } catch (e) {}
 
 // What other invalid card cases can you think of?
+assertEquals(getCardValue(""), "invalid"); // This should throw an error
+assertEquals(getCardValue("A♠♠"), "invalid"); // This should throw an error
+assertEquals(getCardValue("1♠"), "invalid"); // This should throw an error
+assertEquals(getCardValue("B♠"), "invalid"); // This should throw an error
+assertEquals(getCardValue("A♠A"), "invalid"); // This should throw an error
